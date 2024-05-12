@@ -3,7 +3,9 @@ from fastapi import FastAPI
 from auth.base_config import auth_backend, fastapi_users
 from auth.schemas import UserRead, UserCreate
 
-from operations.router import router as router_operation
+from transactions.router import router as router_transaction
+from thing.router import router as router_thing
+from bank_account.router import router as router_bank_account
 
 app = FastAPI(
     title="Trading App"
@@ -21,7 +23,10 @@ app.include_router(
     tags=["Auth"],
 )
 
-app.include_router(router_operation)
+app.include_router(router_transaction)
+app.include_router(router_thing)
+app.include_router(router_bank_account)
+
 # from datetime import datetime
 # from enum import Enum
 # from typing import List, Optional

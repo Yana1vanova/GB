@@ -4,122 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1b8ea8a-7f30-4aa3-9510-b7cd650051bf" name="Changes" comment="Added authorization logic">
-      <change beforePath="$PROJECT_DIR$/.idea/GB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GB.iml" afterDir="false" />
+    <list default="true" id="c1b8ea8a-7f30-4aa3-9510-b7cd650051bf" name="Changes" comment="Added operations support">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bank_account/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bank_account/router.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bank_account/schemas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/transactions/router.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/base_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic-2.7.1.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic-2.7.1.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic-2.7.1.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic-2.7.1.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic-2.7.1.dist-info/licenses/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_core_metadata.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_core_utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_dataclasses.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_decorators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_decorators_v1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_discriminated_union.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_docs_extraction.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_fields.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_forward_ref.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_generate_schema.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_generics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_git.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_internal_dataclass.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_known_annotated_metadata.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_mock_val_ser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_model_construction.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_repr.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_schema_generation_shared.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_signature.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_std_types_schema.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_typing_extra.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_validate_call.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_internal/_validators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/_migration.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/alias_generators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/aliases.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/annotated_handlers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/class_validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/class_validators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/color.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/color.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/dataclasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/dataclasses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/datetime_parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/datetime_parse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/decorator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/deprecated/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/deprecated/class_validators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/deprecated/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/deprecated/copy_internals.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/deprecated/decorator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/deprecated/json.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/deprecated/parse.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/deprecated/tools.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/env_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/env_settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/error_wrappers.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/error_wrappers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/errors.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/errors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/fields.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/fields.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/functional_serializers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/functional_validators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/generics.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/generics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/json.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/json.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/json_schema.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/mypy.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/mypy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/networks.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/networks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/parse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/plugin/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/plugin/_loader.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/plugin/_schema_validator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/root_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/schema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/type_adapter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/types.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/types.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/typing.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/typing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/_hypothesis_plugin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/annotated_types.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/class_validators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/color.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/dataclasses.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/datetime_parse.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/decorator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/env_settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/error_wrappers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/errors.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/fields.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/generics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/json.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/mypy.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/networks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/parse.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/py.typed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/schema.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/tools.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/types.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/typing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/v1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/validators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/v1/version.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/validate_call_decorator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/validators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/version.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pydantic/warnings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/2024_05_10_2003-306b930bb49a_database_creation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/transactions/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/router.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/transactions/schemas.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +35,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="2gGc4KfFQjAA1EuYrMpS3WHoolW" />
@@ -145,15 +46,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "last_opened_file_path": "C:/Users/Yana/PycharmProjects/Diplom",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Yana/PycharmProjects/Diplom/src/bank_account",
+    "settings.editor.selected.configurable": "DBNavigator.Project.OperationSettings"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Yana\PycharmProjects\Diplom\src\bank_account" />
       <recent name="C:\Users\Yana\PycharmProjects\Diplom" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yana\PycharmProjects\Diplom\src\account" />
       <recent name="C:\Users\Yana\PycharmProjects\Diplom\src" />
       <recent name="C:\Users\Yana\PycharmProjects\Diplom\src\auth" />
     </key>
@@ -196,16 +100,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/operations/router.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
