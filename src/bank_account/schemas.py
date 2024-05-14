@@ -5,12 +5,17 @@ from pydantic import BaseModel
 
 class BankAccountCreate(BaseModel):
     id: int
-    amount: str
-    # currency: str
-    # tariff: str
-    # date: datetime
-    # type: str
+    amount: float
     user_id: int
+
+    '''Закомментированные параметры пока 
+    не учавствуют в работе приложения,
+    задел на будущее 
+    currency: str
+    tariff: str
+    date: datetime
+    type: str
+    '''
 
     class Config:
         orm_mode = True
@@ -18,7 +23,7 @@ class BankAccountCreate(BaseModel):
 
 class BankAccountRead(BaseModel):
     id: int
-    amount: str
+    amount: float
     currency: str
     tariff: str
     date: datetime

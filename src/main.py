@@ -4,7 +4,6 @@ from auth.base_config import auth_backend, fastapi_users
 from auth.schemas import UserRead, UserCreate
 
 from transactions.router import router as router_transaction
-from thing.router import router as router_thing
 from bank_account.router import router as router_bank_account
 
 app = FastAPI(
@@ -24,7 +23,6 @@ app.include_router(
 )
 
 app.include_router(router_transaction)
-app.include_router(router_thing)
 app.include_router(router_bank_account)
 
 # from datetime import datetime

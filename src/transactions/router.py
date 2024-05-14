@@ -1,9 +1,10 @@
 import datetime
 
 from fastapi import APIRouter, Depends
-from sqlalchemy import select, insert, update, delete
+from sqlalchemy import select, insert, delete
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from bank_account.router import put_new_balance, get_account_balance
 from database import get_async_session
 from transactions.models import transaction
 from transactions.schemas import TransactionCreate
@@ -31,23 +32,19 @@ async def get_transactions_by_date(transaction_date: datetime.date, session: Asy
 @router.post("/")
 async def add_transaction(new_transaction: TransactionCreate, session: AsyncSession = Depends(get_async_session)):
     stmt = insert(transaction).values(**new_transaction.dict())
-    await session.execute(stmt)
-    await session.commit()
-    return {"status": "success"}
-
-@router.put("/{account_id}")
-async def change_account_details(account_id: int, new_account: TransactionCreate,
-                                 session: AsyncSession = Depends(get_async_session)):
-    stmt = update(transaction).where(transaction.c.id == account_id).values(**new_account.dict())
+    account_id = new_transaction.account_id
+    balance = await get_account_balance(account_id, session)
+    new_balance = balance - new_transaction.amount
+    await put_new_balance(account_id, new_balance, session)
     await session.execute(stmt)
     await session.commit()
     return {"status": "success"}
 
 
 @router.delete("/{account_id}")
-async def delete_account(account_id: int, new_account: TransactionCreate,
+async def delete_transaction(transaction_id: int, transaction: TransactionCreate,
                                  session: AsyncSession = Depends(get_async_session)):
-    stmt = delete(transaction).where(transaction.c.id == account_id).values(**new_account.dict())
+    stmt = delete(transaction).where(transaction.c.id == transaction_id)
     await session.execute(stmt)
     await session.commit()
     return {"status": "success"}

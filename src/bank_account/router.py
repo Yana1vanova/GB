@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy import select, insert, update, delete
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from bank_account.models import bank_account
+from bank_account.models import bank_account, BankAccount
 from bank_account.schemas import BankAccountCreate
 from database import get_async_session
 
@@ -35,6 +35,12 @@ async def get_account_details(user_id: int, session: AsyncSession = Depends(get_
     return result.mappings().all()
 
 
+@router.get("/balance")
+async def get_account_balance(account_id: int, session: AsyncSession = Depends(get_async_session)):
+    account = await session.get(BankAccount, account_id)
+    return float(account.amount)
+
+
 @router.put("/{account_id}")
 async def change_account_details(account_id: int, new_account: BankAccountCreate,
                                  session: AsyncSession = Depends(get_async_session)):
@@ -42,6 +48,13 @@ async def change_account_details(account_id: int, new_account: BankAccountCreate
     await session.execute(stmt)
     await session.commit()
     return {"status": "success"}
+
+
+@router.put("/change_balance/{id}")
+async def put_new_balance(id: int, new_balance: float, session: AsyncSession = Depends(get_async_session)):
+    account = await session.get(BankAccount, id)
+    account.amount = new_balance
+    await session.commit()
 
 
 @router.delete("/{account_id}")

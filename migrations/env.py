@@ -12,7 +12,6 @@ from src.config import DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER
 from src.database import metadata
 from src.transactions.models import *
 from src.auth.models import *
-from src.thing.models import *
 from src.bank_account.models import *
 
 # this is the Alembic Config object, which provides
