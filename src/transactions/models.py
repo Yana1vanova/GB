@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import Table, Column, Integer, String, TIMESTAMP, MetaData, ForeignKey, Float
+from sqlalchemy import Table, Column, Integer, String, TIMESTAMP, ForeignKey, Float
 
 from database import metadata, Base
 
