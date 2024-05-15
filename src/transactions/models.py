@@ -18,6 +18,7 @@ transaction = Table(
 
 )
 
+
 class Transaction(Base):
     __tablename__ = "transaction"
     __table_args__ = {'extend_existing': True}
@@ -29,4 +30,3 @@ class Transaction(Base):
     type = Column(String, default='withdraw'),
     details = Column(String),
     account_id = Column(Integer, ForeignKey("bank_account.id")),
-

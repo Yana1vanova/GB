@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import select, insert, update, delete
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -15,7 +15,8 @@ router = APIRouter(
 
 
 @router.post("/")
-async def create_new(new_account: BankAccountCreate, session: AsyncSession = Depends(get_async_session), User = Depends(current_user)):
+async def create_new(new_account: BankAccountCreate, session: AsyncSession = Depends(get_async_session),
+                     User = Depends(current_user)):
     stmt = insert(bank_account).values(**new_account.dict())
     await session.execute(stmt)
     await session.commit()
@@ -23,51 +24,97 @@ async def create_new(new_account: BankAccountCreate, session: AsyncSession = Dep
 
 
 @router.get("/by_account_id")
-async def get_account_details(account_id: int, session: AsyncSession = Depends(get_async_session), User = Depends(current_user)):
-    query = select(bank_account).where(bank_account.c.id == account_id)
-    result = await session.execute(query)
-    return result.mappings().all()
+async def get_account_details(account_id: int, session: AsyncSession = Depends(get_async_session),
+                              User = Depends(current_user)):
+    try:
+        query = select(bank_account).where(bank_account.c.id == account_id)
+        result = await session.execute(query)
+        return result.mappings().all()
+    except Exception:
+        raise HTTPException(status_code=500, detail={
+            "status": "error",
+            "data": None,
+            "details": None
+        })
 
 
 @router.get("/by_user_id")
 async def get_account_details(user_id: int, session: AsyncSession = Depends(get_async_session),
                               User = Depends(current_user)):
-    query = select(bank_account).where(bank_account.c.user_id == user_id)
-    result = await session.execute(query)
-    return result.mappings().all()
+    try:
+        query = select(bank_account).where(bank_account.c.user_id == user_id)
+        result = await session.execute(query)
+        return result.mappings().all()
+    except Exception:
+        raise HTTPException(status_code=500, detail={
+            "status": "error",
+            "data": None,
+            "details": None
+        })
+
 
 
 @router.get("/balance")
 async def get_account_balance(account_id: int, session: AsyncSession = Depends(get_async_session),
                               User = Depends(current_user)):
-    account = await session.get(BankAccount, account_id)
-    return float(account.amount)
+    try:
+        account = await session.get(BankAccount, account_id)
+        return float(account.amount)
+    except Exception:
+        raise HTTPException(status_code=500, detail={
+            "status": "error",
+            "data": None,
+            "details": None
+        })
 
 
 @router.put("/{account_id}")
 async def change_account_details(account_id: int, new_account: BankAccountCreate,
                                  session: AsyncSession = Depends(get_async_session), User = Depends(current_user)):
-    stmt = update(bank_account).where(bank_account.c.id == account_id).values(**new_account.dict())
-    await session.execute(stmt)
-    await session.commit()
-    return {"status": "success"}
+    try:
+        stmt = update(bank_account).where(bank_account.c.id == account_id).values(**new_account.dict())
+        await session.execute(stmt)
+        await session.commit()
+        return {"status": "success"}
+    except Exception:
+        raise HTTPException(status_code=500, detail={
+            "status": "error",
+            "data": None,
+            "details": None
+        })
+
 
 
 @router.put("/change_balance/{id}")
 async def put_new_balance(id: int, new_balance: float, session: AsyncSession = Depends(get_async_session),
                           User = Depends(current_user)):
-    account = await session.get(BankAccount, id)
-    account.amount = new_balance
-    await session.commit()
+    try:
+        account = await session.get(BankAccount, id)
+        account.amount = new_balance
+        await session.commit()
+    except Exception:
+        raise HTTPException(status_code=500, detail={
+            "status": "error",
+            "data": None,
+            "details": None
+        })
+
 
 
 @router.delete("/{account_id}")
 async def delete_account(account_id: int, new_account: BankAccountCreate,
                                  session: AsyncSession = Depends(get_async_session), User = Depends(current_user)):
-    stmt = delete(bank_account).where(bank_account.c.id == account_id).values(**new_account.dict())
-    await session.execute(stmt)
-    await session.commit()
-    return {"status": "success"}
+    try:
+        stmt = delete(bank_account).where(bank_account.c.id == account_id).values(**new_account.dict())
+        await session.execute(stmt)
+        await session.commit()
+        return {"status": "success"}
+    except Exception:
+        raise HTTPException(status_code=500, detail={
+            "status": "error",
+            "data": None,
+            "details": None
+        })
 
 
 
